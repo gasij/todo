@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Форма регистрации -->
+    <div id="register-form" class="auth-form">
+      <h2>Регистрация</h2>
+      <input type="text" id="reg-username" placeholder="Имя пользователя">
+      <input type="email" id="reg-email" placeholder="Email">
+      <input type="password" id="reg-password" placeholder="Пароль">
+      <button onclick="register()">Зарегистрироваться</button>
+      <p>Уже есть аккаунт? <a href="#" onclick="showLogin()">Войти</a></p>
+    </div>
+
+    <!-- Форма входа -->
+    <div id="login-form" class="auth-form" style="display: none;">
+      <h2>Вход</h2>
+      <input type="email" id="login-email" placeholder="Email">
+      <input type="password" id="login-password" placeholder="Пароль">
+      <button onclick="login()">Войти</button>
+      <p>Нет аккаунта? <a href="#" onclick="showRegister()">Зарегистрироваться</a></p>
+    </div>
+
+    <!-- Основное приложение (показывается после входа) -->
+    <div id="app" style="display: none;">
+      <header>
+        <h1>Мой Todo List</h1>
+        <button id="logout-btn" onclick="logout()">Выйти</button>
+      </header>
+      
+      <div class="add-todo">
+        <input type="text" id="todo-title" placeholder="Название задачи">
+        <textarea id="todo-description" placeholder="Описание"></textarea>
+        <input type="date" id="todo-due-date">
+        <button onclick="addTodo()">Добавить задачу</button>
+      </div>
+      
+      <div class="todo-list" id="todo-list">
+        <!-- Задачи будут добавляться здесь -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/auth.js"></script>
+  <script src="/js/todos.js"></script>
+</body>
+</html>
